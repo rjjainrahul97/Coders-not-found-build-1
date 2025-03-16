@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Casual Games</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Casual Games</h1>
+        </header>
+        <main id="game-selection">
+            <div class="game-tile" onclick="openGame('tic-tac-toe')">Tic Tac Toe</div>
+            <div class="game-tile" onclick="openGame('rock-paper-scissors')">Rock Paper Scissors</div>
+            <div class="game-tile" onclick="openGame('snake')">Snake</div>
+        </main>
+
+        <div id="tic-tac-toe-options" class="game-options" style="display: none;">
+            <h2>Tic Tac Toe</h2>
+            <button onclick="startGame('tic-tac-toe', 'casual')">Casual</button>
+            <button onclick="startGame('tic-tac-toe', 'first-to-3')">First to 3 Wins</button>
+            <div id="tic-tac-toe-game" class="game-area" style="display: none;">
+                <div class="board">
+                    <div class="cell" data-index="0"></div>
+                    <div class="cell" data-index="1"></div>
+                    <div class="cell" data-index="2"></div>
+                    <div class="cell" data-index="3"></div>
+                    <div class="cell" data-index="4"></div>
+                    <div class="cell" data-index="5"></div>
+                    <div class="cell" data-index="6"></div>
+                    <div class="cell" data-index="7"></div>
+                    <div class="cell" data-index="8"></div>
+                </div>
+                <div class="message"></div>
+                <div class="scores">
+                    <p>Player: <span id="ttt-player-score">0</span></p>
+                    <p>Computer: <span id="ttt-computer-score">0</span></p>
+                </div>
+                <button onclick="resetGame('tic-tac-toe')">Reset</button>
+                <button onclick="goBack()">Back to Menu</button>
+            </div>
+        </div>
+
+        <div id="rock-paper-scissors-options" class="game-options" style="display: none;">
+            <h2>Rock Paper Scissors</h2>
+            <button onclick="startGame('rock-paper-scissors', 'casual')">Casual</button>
+            <button onclick="startGame('rock-paper-scissors', 'first-to-3')">First to 3 Wins</button>
+            <div id="rock-paper-scissors-game" class="game-area" style="display: none;">
+                <div class="choices">
+                    <button onclick="playRPS('rock')">Rock</button>
+                    <button onclick="playRPS('paper')">Paper</button>
+                    <button onclick="playRPS('scissors')">Scissors</button>
+                    <button onclick="playRPS('random')">Random</button>
+                </div>
+                <div class="result">
+                    <div class="animation">
+                        <p>Rock</p>
+                        <p>Paper</p>
+                        <p>Scissors</p>
+                        <p>Go!</p>
+                    </div>
+                    <p id="rps-player-choice"></p>
+                    <p id="rps-computer-choice"></p>
+                    <p id="rps-result"></p>
+                </div>
+                <div class="scores">
+                    <p>Player: <span id="rps-player-score">0</span></p>
+                    <p>Computer: <span id="rps-computer-score">0</span></p>
+                </div>
+                <button onclick="resetGame('rock-paper-scissors')">Reset</button>
+                <button onclick="goBack()">Back to Menu</button>
+            </div>
+        </div>
+
+        <div id="snake-game" class="game-area" style="display: none;">
+            <h2>Snake</h2>
+            <canvas id="snakeCanvas" width="400" height="400"></canvas>
+            <div class="scores">
+                <p>Score: <span id="snake-score">0</span></p>
+            </div>
+            <button onclick="resetGame('snake')">Restart</button>
+            <button onclick="goBack()">Back to Menu</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
